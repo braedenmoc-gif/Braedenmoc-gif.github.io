@@ -309,7 +309,7 @@ export const products: Product[] = [
       },
     ],
     format: 'Downloadable PDF',
-    pages: '47 pages',
+    pages: '46 pages',
   },
   {
     slug: 'complete-qb-development-bundle',
