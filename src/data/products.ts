@@ -409,9 +409,9 @@ export const faqs = [
 ];
 
 export const heroImages = {
-  primary: 'https://images.pexels.com/photos/13345751/pexels-photo-13345751.jpeg',
+  primary: 'https://images.pexels.com/photos/140039/pexels-photo-140039.jpeg',
   throwing: 'https://images.pexels.com/photos/13401812/pexels-photo-13401812.jpeg',
-  prepass: 'https://images.pexels.com/photos/159655/quarterback-american-football-football-player-passer-159655.jpeg',
+  prepass: 'https://images.pexels.com/photos/37525808/pexels-photo-37525808.jpeg',
   training: 'https://images.pexels.com/photos/4700756/pexels-photo-4700756.jpeg',
   stadium: 'https://images.pexels.com/photos/1646735/pexels-photo-1646735.jpeg',
   night: 'https://images.pexels.com/photos/2682296/pexels-photo-2682296.jpeg',

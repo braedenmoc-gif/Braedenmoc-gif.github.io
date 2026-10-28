@@ -26,7 +26,7 @@ export default function Home() {
       {/* HERO */}
       <section className="relative min-h-[92vh] w-full overflow-hidden bg-nearblack noise-overlay">
         <div className="absolute inset-0">
-          <img src={imgSrc(heroImages.primary, 2000, 1200)} alt="High school quarterback preparing to pass during an outdoor football game" className="h-full w-full scale-105 object-cover object-top opacity-55" fetchPriority="high" />
+          <img src={imgSrc(heroImages.primary, 2000, 1200)} alt="Quarterback poised to throw during a football game" className="h-full w-full scale-105 object-cover object-top opacity-55" fetchPriority="high" />
           <div className="absolute inset-0 bg-gradient-to-r from-nearblack via-nearblack/70 to-nearblack/20" />
           <div className="absolute inset-0 bg-gradient-to-t from-nearblack via-transparent to-nearblack/40" />
         </div>
@@ -100,7 +100,7 @@ export default function Home() {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="reveal relative">
               <div className="relative aspect-[4/5] overflow-hidden rounded-xl border border-white/10">
-                <img src={imgSrc(heroImages.prepass, 1000, 1250)} alt="Quarterback preparing to throw on a football field" className="h-full w-full object-cover" />
+                <img src={imgSrc(heroImages.prepass, 1000, 1250)} alt="Quarterback throwing during a football game" className="h-full w-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-nearblack/80 via-transparent to-transparent" />
                 <div className="absolute bottom-5 left-5 right-5">
                   <p className="font-headline text-xs uppercase tracking-widest2 text-offwhite/80">Philosophy</p>
