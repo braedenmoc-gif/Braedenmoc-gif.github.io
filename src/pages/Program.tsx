@@ -49,7 +49,7 @@ export default function Program() {
           </p>
           <div className="reveal mt-8 flex flex-wrap gap-3">
             <Link to="/products/quarterback-playbook" className="btn-primary">Get the Playbook — $24</Link>
-            <Link to="/products/complete-qb-development-bundle" className="btn-outline">Get the Bundle — $45</Link>
+            <Link to="/products/complete-qb-development-bundle" className="btn-outline">Get the Bundle — $52</Link>
           </div>
         </div>
       </section>
@@ -235,10 +235,10 @@ export default function Program() {
         <div className="container-x relative">
           <div className="reveal flex flex-col items-center gap-6 text-center">
             <h2 className="font-display text-5xl uppercase leading-none text-offwhite">Get the full guide.</h2>
-            <p className="max-w-md text-base leading-relaxed text-silver">Get The Quarterback Playbook for the whole position, with this practice program at the back. $24 for the Playbook, or $45 for the complete bundle.</p>
+            <p className="max-w-md text-base leading-relaxed text-silver">Get The Quarterback Playbook for the whole position, with this practice program at the back. $24 for the Playbook, or $52 for the complete bundle.</p>
             <div className="flex flex-wrap items-center justify-center gap-3">
               <Link to="/products/quarterback-playbook" className="btn-primary">Get the Playbook — $24</Link>
-              <Link to="/products/complete-qb-development-bundle" className="btn-outline">Get the Bundle — $45</Link>
+              <Link to="/products/complete-qb-development-bundle" className="btn-outline">Get the Bundle — $52</Link>
               <Link to="/resources" className="inline-flex items-center gap-1 font-headline text-xs font-semibold uppercase tracking-wider2 text-electric hover:gap-2 transition-all">
                 Compare all resources <ArrowUpRight className="h-3.5 w-3.5" />
               </Link>

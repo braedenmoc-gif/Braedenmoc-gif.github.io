@@ -44,7 +44,7 @@ export default function Home() {
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-3 opacity-0 animate-fade-up [animation-delay:0.5s] [animation-fill-mode:forwards]">
               <Link to="/products/quarterback-playbook" className="btn-primary">Get the Playbook — $24</Link>
-              <Link to="/products/complete-qb-development-bundle" className="btn-outline">Get the Bundle — $45</Link>
+              <Link to="/products/complete-qb-development-bundle" className="btn-outline">Get the Bundle — $52</Link>
             </div>
             <p className="mt-4 font-headline text-xs uppercase tracking-wider2 text-silver/50 opacity-0 animate-fade-up [animation-delay:0.6s] [animation-fill-mode:forwards]">
               Instant download · 14-day guarantee · Save $10 with the bundle
@@ -136,6 +136,28 @@ export default function Home() {
                 Read our story <ArrowUpRight className="h-3.5 w-3.5" />
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ANXIETY / MENTAL PERFORMANCE */}
+      <section className="relative overflow-hidden border-y border-electric/20 bg-electric/[0.06] py-20">
+        <div className="container-x">
+          <div className="reveal grid items-center gap-10 lg:grid-cols-2">
+            <div>
+              <p className="eyebrow mb-2">The Quarterback Journal</p>
+              <h2 className="font-display text-5xl sm:text-6xl uppercase leading-none text-offwhite">Train the mind, too.</h2>
+              <p className="mt-5 max-w-md text-base leading-relaxed text-silver">Pressure, overthinking, and anxiety hold back more quarterbacks than arm talent does. The Journal has a full section on understanding anxiety and practicing real skills for it, with a 14-day workbook and a 30-day challenge.</p>
+              <div className="mt-7 flex flex-wrap gap-3">
+                <Link to="/products/quarterback-journal" className="btn-primary">See the Journal, $19</Link>
+              </div>
+              <p className="mt-4 max-w-md text-xs text-silver/70">Educational only. Not therapy or medical advice.</p>
+            </div>
+            <ul className="space-y-3 text-sm text-offwhite">
+              {['The anxiety cycle and what is happening in your body', 'Breathing, grounding, and muscle relaxation', 'Thought records and gradual exposure from CBT', 'A 14-day anxiety workbook', 'When to get support, and where'].map((b) => (
+                <li key={b} className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-electric" /> {b}</li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
@@ -269,15 +291,15 @@ export default function Home() {
                 <span className="rounded-full bg-electric px-3 py-1 text-xs font-bold uppercase tracking-wider2 text-white">Best Value</span>
               </div>
               <h2 className="font-display text-5xl sm:text-6xl uppercase leading-[0.95] text-offwhite">Train the<br />complete game.</h2>
-              <p className="mt-5 max-w-md text-base leading-relaxed text-silver">Get the Playbook, Film Room Guide, and Offseason Journal together — a complete guide to the position, a film-study system, and a 12-week journal designed to work as one. Three products. One offseason. $10 less than buying separately.</p>
+              <p className="mt-5 max-w-md text-base leading-relaxed text-silver">Get the Playbook, Film Room Guide, and Quarterback Journal together: a complete guide to the position, a film-study system, and a mental-performance journal with a full anxiety section. Three products. One system. $10 less than buying separately.</p>
               <div className="mt-7 flex items-baseline gap-3">
                 <span className="font-headline text-4xl font-bold text-offwhite">${bundle.price}</span>
-                <span className="text-sm text-silver line-through">$55</span>
+                <span className="text-sm text-silver line-through">$62</span>
                 <span className="rounded-full bg-electric/15 px-3 py-1 text-xs font-semibold text-electric">Save $10</span>
               </div>
               <p className="mt-3 font-headline text-xs uppercase tracking-wider2 text-silver/50">Three products. One offseason.</p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Link to={`/products/${bundle.slug}`} className="btn-primary">Get the Bundle — $45</Link>
+                <Link to={`/products/${bundle.slug}`} className="btn-primary">Get the Bundle — $52</Link>
                 <Link to="/resources" className="btn-outline">Compare products</Link>
               </div>
             </div>
@@ -358,7 +380,7 @@ export default function Home() {
               One download. The whole position, start to finish. A real offseason. Pick a resource and start today — or get the bundle and save $10.
             </p>
             <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
-              <Link to="/products/complete-qb-development-bundle" className="btn-solid">Get the Bundle — $45</Link>
+              <Link to="/products/complete-qb-development-bundle" className="btn-solid">Get the Bundle — $52</Link>
               <Link to="/resources" className="btn-outline">Browse All Resources</Link>
             </div>
             <p className="mt-5 font-headline text-xs uppercase tracking-wider2 text-silver/40">Instant download · 14-day satisfaction guarantee · Print as many copies as you need</p>

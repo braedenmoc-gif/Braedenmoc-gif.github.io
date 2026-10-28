@@ -55,7 +55,21 @@ export function ProductCard({ product }: { product: Product }) {
       <div className="flex flex-1 flex-col p-6 pt-5">
         <h3 className="mb-1 font-headline text-lg font-semibold uppercase tracking-tight text-offwhite leading-snug">{product.name}</h3>
         <p className="eyebrow mb-3">${product.price}</p>
-        <p className="mb-5 text-sm leading-relaxed text-silver line-clamp-3">{product.shortDescription}</p>
+        <p className="mb-4 text-sm leading-relaxed text-silver line-clamp-3">{product.shortDescription}</p>
+        {product.highlight && (
+          <p className="mb-4 rounded-sm border border-electric/30 bg-electric/10 px-3 py-2 text-xs font-semibold uppercase tracking-wider2 text-electric">
+            Featured: full anxiety section + 14-day workbook
+          </p>
+        )}
+        {!product.isBundle && (
+          <ul className="mb-5 space-y-1.5">
+            {product.benefits.slice(0, 4).map((b) => (
+              <li key={b} className="flex items-start gap-2 text-xs leading-snug text-silver">
+                <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: product.accent }} /> {b}
+              </li>
+            ))}
+          </ul>
+        )}
         <div className="mt-auto flex items-center gap-1 font-headline text-xs font-semibold uppercase tracking-wider2" style={{ color: product.accent }}>
           View details
           <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

@@ -25,6 +25,7 @@ export type Product = {
   badge?: string;
   isBundle?: boolean;
   includes?: string[];
+  highlight?: { eyebrow: string; title: string; body: string; bullets: string[] };
 };
 
 export type WeekObjective = {
@@ -258,78 +259,95 @@ export const products: Product[] = [
     pages: '43 pages',
   },
   {
-    slug: 'offseason-qb-training-journal',
+    slug: 'quarterback-journal',
     id: 'sku_journal_003',
-    name: 'Offseason QB Training Journal',
-    tagline: 'Track what you measure, improve what you track',
-    price: 12,
+    name: 'The Quarterback Journal',
+    tagline: 'Beyond the game: master your mindset, build your confidence, define your legacy',
+    price: 19,
     cover: { hue: 'from-[#0f1a14] via-[#0a0f0c] to-[#070a08]', label: 'JOURNAL' },
     accent: '#5BBF9C',
     shortDescription:
-      'A 46-page training journal built for a 12-week offseason: baseline test, twelve two-page weekly spreads, four-week reviews, six in-season game-week pages, a total-volume tracker, a one-line session log, and a mental-rep script.',
+      'A 47-page mental performance and personal development workbook for quarterbacks: confidence, pressure, mistakes, leadership, discipline, and a full section on understanding and managing anxiety, including a 14-day anxiety workbook and a 30-day challenge.',
     longDescription:
-      'The Offseason Journal is a printable 12-week training log you can use alongside the Playbook or on its own. You start with a baseline test and self-ratings. Each week has a plan with four measurable goals and a daily log of session type, minutes, throws, RPE, sleep, and soreness, then a second page with an accuracy test grid, footwork self-grade, film log, and habit tracker. Every four weeks a review page and retest checklist show what moved. Six game-week pages cover the season, and the back pages hold a total-volume tracker, a one-line-per-session log, a two-minute mental-rep script, and a pre-practice checklist.',
-    who: 'Any quarterback who wants to track an offseason and see measurable progress week over week.',
+      'The Quarterback Journal is built around one idea: becoming a great quarterback starts with developing the person behind the player. It combines self-assessment, mental toughness, confidence, leadership, and discipline with a practical, plain-language section on the mind beyond football: overthinking, anxiety, emotional control, relationships, setbacks, and identity. The anxiety chapter explains what anxiety is, the anxiety cycle, breathing, grounding, and muscle relaxation, thought records and gradual exposure from cognitive behavioral therapy, the lifestyle habits that affect anxiety, and when to get professional support. A 14-day anxiety workbook turns it into daily practice. It is an educational resource and not a replacement for professional mental health care.',
+    who: 'High school and college quarterbacks, and any young athlete who deals with pressure, self-doubt, anxiety, or adversity and wants practical tools, not just motivation.',
     benefits: [
-      'Baseline test and self-ratings to start from',
-      'Twelve weekly spreads: four measurable goals and a daily log',
-      'Accuracy test grid by depth and zone, plus a footwork self-grade',
-      'Film log and habit tracker every week',
-      'Sleep, soreness, and RPE tracked daily to manage load',
-      'Three four-week reviews with a retest checklist, then an offseason close-out',
-      'Six in-season game-week pages',
-      'Total-volume tracker, one-line session log, mental-rep script, and pre-practice checklist',
+      'A full anxiety chapter with the anxiety cycle, breathing, grounding, thought records, and a fear ladder',
+      'A 14-day anxiety workbook: one skill, exercise, and reflection per day',
+      'A 30-day mental development challenge, 5 to 15 minutes a day',
+      'Confidence, pressure, mistakes, self-doubt, focus, and visualization',
+      'Leadership, discipline, being a backup, and a 90-day roadmap',
+      'Twelve reusable templates: daily check-in, game prep, postgame, and more',
+      'Written by a college quarterback, with real references',
     ],
+    highlight: {
+      eyebrow: 'The anxiety section',
+      title: 'Understand it. Practice skills. Know when to get help.',
+      body: 'The heart of this journal is a dedicated section on anxiety and the overactive mind, written in plain language for athletes. It teaches skills, not quick fixes, and it is honest about when to talk to a professional.',
+      bullets: [
+        'What anxiety is, why it happens, and the physical signs',
+        'The anxiety cycle, with a diagram you can use',
+        'Breathing, grounding (5-4-3-2-1), muscle relaxation, and mindfulness',
+        'CBT-based thought records and balanced thinking',
+        'Gradual exposure: how to face fears in small, safe steps',
+        'Sleep, caffeine, and other habits that affect anxiety',
+        'When to seek support, and a crisis note with the 988 Lifeline',
+        'A 14-day anxiety workbook to practice it all',
+      ],
+    },
     sections: [
-      { title: 'Start Here and Baseline', body: 'How to use the journal, the habits to keep consistent, an offseason starting-point test, and a 1-to-5 honest self-rating.' },
-      { title: 'Weekly Plan and Daily Log', body: 'Four measurable goals (mechanical, film, physical, mental) and a daily log of session type, minutes, throws, RPE, sleep, and soreness, with a two-minute mental rep to start each week.' },
-      { title: 'Weekly Spread, Page Two', body: 'An accuracy test by depth and zone, a footwork self-grade, a film log, and a habit tracker for the week.' },
-      { title: 'Four-Week Reviews', body: 'A zoom-out page and retest checklist after weeks 4, 8, and 12 (5-10-5, 10-yard sprint, broad jump) so you can see what changed.' },
-      { title: 'Close It Out and Game Week', body: 'An offseason summary page, then six game-week pages with a scouting snapshot for in-season use.' },
-      { title: 'Logs and Scripts', body: 'A total-volume tracker, a one-line-per-session log, a mental-rep script, and a pre-practice checklist.' },
+      { title: 'Part I: Know Yourself', body: 'Identity beyond the jersey, strengths and weaknesses, personal standards, purpose and values, and self-awareness, with worksheets for each.' },
+      { title: 'Part II: The Competitive Mind', body: 'Real confidence, handling pressure, mental toughness, responding to mistakes, overcoming self-doubt, focus, visualization, and building your own mental performance routine.' },
+      { title: 'Part III: Building the Quarterback', body: 'Leading without a title, earning trust, discipline, consistency, being a backup, ownership, goal-setting, being a teammate, and a 90-day roadmap.' },
+      { title: 'Part IV: The Mind Beyond Football', body: 'Thoughts and overthinking, the full anxiety chapter, a 14-day anxiety workbook, confidence without validation, emotional intelligence, relationships, setbacks, and becoming more than an athlete.' },
+      { title: 'Part V: The Daily Work and the 30-Day Challenge', body: 'Twelve reusable templates (daily check-in, weekly reflection, practice evaluation, game preparation, postgame reflection, confidence, stress and anxiety, habits, goals, monthly assessment, leadership, end of season) and a 30-day mental development challenge with a tracker.' },
     ],
     preview: [
-      'Weekly plan with four goals and a daily log',
-      'Accuracy test grid and footwork self-grade',
-      'Four-week review and retest checklist',
-      'Pre-practice checklist',
+      'The anxiety cycle diagram',
+      'A thought record and a fear ladder',
+      'A day from the 14-day anxiety workbook',
+      'A chapter layout: lesson, what it looks like, mistakes, how to apply it, reflection',
     ],
     faqs: [
       {
-        q: 'Is this reusable?',
-        a: 'The journal is a 12-week dated layout, so each offseason you print a fresh copy. Your purchase lets you print as many copies as you need for your own use.',
+        q: 'Is this therapy or medical advice?',
+        a: 'No. It is an educational resource that teaches skills commonly used to manage stress and anxiety. It does not replace professional mental health care, and it says when to reach out for help.',
+      },
+      {
+        q: 'Do I have to play football to use it?',
+        a: 'Football gives it its examples, but most of the lessons, especially the anxiety chapter, the 14-day workbook, and the 30-day challenge, apply to anyone.',
       },
       {
         q: 'Do I need the Playbook to use it?',
-        a: 'No, it works on its own. If you run both, log your Playbook sessions in the Journal daily log.',
+        a: 'No. The Playbook teaches the position and the Journal develops the person. They work well together, and each works on its own.',
       },
       {
-        q: 'What if I prefer digital tracking?',
-        a: 'The journal is a PDF, so you can print it or fill it on a tablet with any PDF annotation app.',
+        q: 'What format is it?',
+        a: 'A 47-page downloadable PDF you can print or fill in on a tablet with any PDF annotation app.',
       },
     ],
     format: 'Downloadable PDF',
-    pages: '46 pages',
+    pages: '47 pages',
   },
   {
     slug: 'complete-qb-development-bundle',
     id: 'sku_bundle_004',
     name: 'Complete QB Development Bundle',
     tagline: 'Everything you need to develop this offseason',
-    price: 45,
-    compareAt: 55,
+    price: 52,
+    compareAt: 62,
     cover: { hue: 'from-electric via-[#0c1430] to-nearblack', label: 'BUNDLE' },
     accent: '#3B82F6',
     shortDescription:
-      'The Playbook, Film Room Guide, and Offseason Journal together — a complete 136-page development system for $45, $10 less than buying each separately ($55).',
+      'The Playbook, Film Room Guide, and Quarterback Journal together — a complete 137-page development system for $52, $10 less than buying each separately ($62).',
     longDescription:
-      'The Bundle gives you the complete development picture: a complete guide to playing quarterback, a film-study guide that sharpens your recognition and decision-making, and a 12-week journal that turns your offseason into measurable progress. Three products designed to work together, for $10 less than buying each separately.',
+      'The Bundle gives you the complete development picture: a complete guide to playing quarterback, a film-study guide that sharpens your recognition and decision-making, and a mental-performance journal with a full anxiety section. Three products designed to work together, for $10 less than buying each separately.',
     who: 'Quarterbacks who are serious about a complete, structured offseason and want every tool at once.',
     benefits: [
       'All three products in one download',
       'A complete guide to the position (The Quarterback Playbook)',
       'A complete film-study system (Film Room Guide)',
-      'A 12-week offseason tracking journal (Journal)',
+      'A mental performance journal with an anxiety workbook (The Quarterback Journal)',
       'Save $10 vs buying each product individually',
     ],
     sections: [
@@ -339,8 +357,8 @@ export const products: Product[] = [
         bullets: [
           'The Quarterback Playbook — $24 value',
           'QB Film Room Guide — $19 value',
-          'Offseason QB Training Journal — $12 value',
-          'Total individual value: $55',
+          'The Quarterback Journal — $19 value',
+          'Total individual value: $62',
         ],
       },
     ],
@@ -356,16 +374,16 @@ export const products: Product[] = [
       },
       {
         q: 'Is it cheaper than buying separately?',
-        a: 'Yes. Individually the three products cost $55; the bundle is $45, saving you $10.',
+        a: 'Yes. Individually the three products cost $62; the bundle is $52, saving you $10.',
       },
     ],
     format: 'Downloadable PDF (3 files)',
-    pages: '136 pages total',
+    pages: '137 pages total',
     isBundle: true,
     includes: [
       'quarterback-playbook',
       'qb-film-room-guide',
-      'offseason-qb-training-journal',
+      'quarterback-journal',
     ],
   },
 ];
@@ -389,7 +407,7 @@ export const faqs = [
   },
   {
     q: 'Can I buy the bundle later?',
-    a: 'Yes, but you will save more by buying the bundle up front. The bundle is $45 vs $55 for all three products separately.',
+    a: 'Yes, but you will save more by buying the bundle up front. The bundle is $52 vs $62 for all three products separately.',
   },
   {
     q: 'What if I am not satisfied?',

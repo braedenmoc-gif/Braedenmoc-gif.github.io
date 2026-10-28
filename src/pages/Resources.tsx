@@ -52,7 +52,7 @@ export default function Resources() {
                 <p className="mt-4 text-base leading-relaxed text-silver">All three products together — a structured program, a film-study system, and a 12-week journal. Designed to work as one complete offseason system.</p>
                 <div className="mt-6 flex items-baseline gap-3">
                   <span className="font-headline text-4xl font-bold text-offwhite">${bundle.price}</span>
-                  <span className="text-sm text-silver line-through">$55</span>
+                  <span className="text-sm text-silver line-through">$62</span>
                   <span className="rounded-full bg-electric/15 px-3 py-1 text-xs font-semibold text-electric">Save $10</span>
                 </div>
                 <div className="mt-7 flex flex-wrap gap-3">

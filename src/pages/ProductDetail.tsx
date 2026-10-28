@@ -90,6 +90,28 @@ export default function ProductDetail() {
         </div>
       </section>
 
+      {product.highlight && (
+        <section className="border-y border-electric/20 bg-electric/[0.06] py-20">
+          <div className="container-x">
+            <div className="reveal grid gap-10 lg:grid-cols-2">
+              <div>
+                <p className="eyebrow mb-2">{product.highlight.eyebrow}</p>
+                <h2 className="mb-5 font-display text-4xl uppercase leading-none text-offwhite sm:text-5xl">{product.highlight.title}</h2>
+                <p className="text-sm leading-relaxed text-silver">{product.highlight.body}</p>
+                <p className="mt-4 text-xs leading-relaxed text-silver/70">Educational only. This is not therapy or medical advice, and it does not replace professional care.</p>
+              </div>
+              <ul className="space-y-3">
+                {product.highlight.bullets.map((b) => (
+                  <li key={b} className="flex items-start gap-2 text-sm text-offwhite">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-electric" /> {b}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Benefits */}
       <section className="bg-charcoal py-20">
         <div className="container-x">
