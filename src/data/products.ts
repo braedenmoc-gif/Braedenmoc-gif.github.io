@@ -416,7 +416,7 @@ export const heroImages = {
   stadium: 'https://images.pexels.com/photos/1646735/pexels-photo-1646735.jpeg',
   night: 'https://images.pexels.com/photos/2682296/pexels-photo-2682296.jpeg',
   huddle: 'https://images.pexels.com/photos/1147453/pexels-photo-1147453.jpeg',
-  coach: 'https://images.pexels.com/photos/1618081/pexels-photo-1618081.jpeg',
+  coach: 'https://images.pexels.com/photos/140039/pexels-photo-140039.jpeg',
   field: 'https://images.pexels.com/photos/399187/pexels-photo-399187.jpeg',
   action: 'https://images.pexels.com/photos/163226/football-quarterback-running-back-action-163226.jpeg',
 };
