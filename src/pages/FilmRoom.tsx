@@ -103,7 +103,7 @@ export default function FilmRoom() {
       {/* Header */}
       <section className="relative overflow-hidden bg-nearblack py-24 noise-overlay">
         <div className="absolute inset-0">
-          <img src={imgSrc(heroImages.coach, 2000, 1000)} alt="Football coach and players strategizing on the field" className="h-full w-full object-cover opacity-25" />
+          <img src={imgSrc(heroImages.coach, 2000, 1000)} alt="College football players on the field during a game" className="h-full w-full object-cover opacity-25" />
           <div className="absolute inset-0 bg-gradient-to-r from-nearblack via-nearblack/80 to-nearblack/30" />
         </div>
         <div className="container-x relative">
