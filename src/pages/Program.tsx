@@ -6,13 +6,13 @@ import { useState } from 'react';
 const dailySchedule = [
   { block: '0:00–0:20', title: 'Warm-Up & Arm Care', desc: 'The warm-up circuit, a band series, and thoracic and hip mobility to prepare the shoulder and hips before you throw.' },
   { block: '0:20–0:30', title: 'Progressive Throwing Ramp', desc: 'A built-in ramp from short, easy throws to full effort, with the throw count written on the card.' },
-  { block: '0:30–1:05', title: 'The Day\u2019s Drill Blocks', desc: 'Two to four drills from the 47-drill library, depending on the day: mechanics, footwork, pocket work, accuracy, or reading and decisions, with sets and reps listed.' },
+  { block: '0:30–1:05', title: 'The Day\u2019s Drill Blocks', desc: 'Two to four drills from the core drills, depending on the day: mechanics, footwork, pocket work, accuracy, or reading and decisions.' },
   { block: '1:05–1:13', title: 'Cooldown & Log', desc: 'A cooldown, then log your RPE, soreness, energy, and sleep. Each card also has a film or mental task for the day.' },
 ];
 
 const programIncludes = [
   { icon: Clock, t: '28 Daily Sessions', d: 'Every day has a goal, a drill list with sets and reps, a throw total, and a note on what good looks like. Days 7, 14, 21, and 28 are off or review days.' },
-  { icon: Dumbbell, t: 'Physical Development', d: 'A 47-drill library covering warm-up, mechanics, footwork, pocket movement, accuracy, and game-speed work, layered week by week.' },
+  { icon: Dumbbell, t: 'Physical Development', d: 'Ten core drills covering mechanics, footwork, pocket movement, accuracy, reading, and game-speed work, layered week by week.' },
   { icon: Eye, t: 'Film & Recognition', d: 'Pre-snap identification, one-high and two-high reads, pressure recognition, and a film or mental task on every day card.' },
   { icon: Brain, t: 'Decision-Making', d: 'Situational football, down-and-distance logic, and timing windows that translate to game-speed execution.' },
   { icon: Trophy, t: 'Weekly Scorecards', d: 'Four weekly scorecards and a day-26 final assessment compared with your day-1 baseline.' },
@@ -42,13 +42,13 @@ export default function Program() {
           <div className="absolute inset-0 bg-gradient-to-r from-nearblack via-nearblack/80 to-nearblack/30" />
         </div>
         <div className="container-x relative">
-          <p className="eyebrow mb-3 reveal">The Program</p>
-          <h1 className="reveal display-xl text-6xl sm:text-7xl lg:text-8xl text-offwhite">The 4-Week Program</h1>
+          <p className="eyebrow mb-3 reveal">The Practice Program</p>
+          <h1 className="reveal display-xl text-6xl sm:text-7xl lg:text-8xl text-offwhite">The 4-Week Practice Program</h1>
           <p className="reveal mt-5 max-w-xl text-base leading-relaxed text-silver">
-            A progressive, structured quarterback development program. Four weeks that build from foundational mechanics to game-speed execution and evaluation — every day with an objective, a drill set, and a checkpoint.
+            The practice section at the back of The Quarterback Playbook. Four weeks that build from foundational mechanics to game-speed execution and evaluation, with a day-by-day schedule, core drills, baseline tests, and a scorecard. It turns the guide into reps.
           </p>
           <div className="reveal mt-8 flex flex-wrap gap-3">
-            <Link to="/products/4-week-quarterback-development-playbook" className="btn-primary">Get the Playbook — $24</Link>
+            <Link to="/products/quarterback-playbook" className="btn-primary">Get the Playbook — $24</Link>
             <Link to="/products/complete-qb-development-bundle" className="btn-outline">Get the Bundle — $45</Link>
           </div>
         </div>
@@ -234,10 +234,10 @@ export default function Program() {
         <div className="absolute inset-0 bg-grid-faint [background-size:48px_48px] opacity-40" />
         <div className="container-x relative">
           <div className="reveal flex flex-col items-center gap-6 text-center">
-            <h2 className="font-display text-5xl uppercase leading-none text-offwhite">Run the full program.</h2>
-            <p className="max-w-md text-base leading-relaxed text-silver">Get the 4-Week Playbook and run every day with structured drills, checkpoints, and scorecards. $24 for the program, or $45 for the complete bundle.</p>
+            <h2 className="font-display text-5xl uppercase leading-none text-offwhite">Get the full guide.</h2>
+            <p className="max-w-md text-base leading-relaxed text-silver">Get The Quarterback Playbook for the whole position, with this practice program at the back. $24 for the Playbook, or $45 for the complete bundle.</p>
             <div className="flex flex-wrap items-center justify-center gap-3">
-              <Link to="/products/4-week-quarterback-development-playbook" className="btn-primary">Get the Playbook — $24</Link>
+              <Link to="/products/quarterback-playbook" className="btn-primary">Get the Playbook — $24</Link>
               <Link to="/products/complete-qb-development-bundle" className="btn-outline">Get the Bundle — $45</Link>
               <Link to="/resources" className="inline-flex items-center gap-1 font-headline text-xs font-semibold uppercase tracking-wider2 text-electric hover:gap-2 transition-all">
                 Compare all resources <ArrowUpRight className="h-3.5 w-3.5" />

@@ -43,7 +43,7 @@ export default function Home() {
               Train with purpose. Study with intention. Develop the mechanics, confidence, and football IQ to elevate your quarterback game.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-3 opacity-0 animate-fade-up [animation-delay:0.5s] [animation-fill-mode:forwards]">
-              <Link to="/products/4-week-quarterback-development-playbook" className="btn-primary">Get the Playbook — $24</Link>
+              <Link to="/products/quarterback-playbook" className="btn-primary">Get the Playbook — $24</Link>
               <Link to="/products/complete-qb-development-bundle" className="btn-outline">Get the Bundle — $45</Link>
             </div>
             <p className="mt-4 font-headline text-xs uppercase tracking-wider2 text-silver/50 opacity-0 animate-fade-up [animation-delay:0.6s] [animation-fill-mode:forwards]">
@@ -167,10 +167,10 @@ export default function Home() {
         <div className="absolute inset-0 bg-grid-faint [background-size:48px_48px] opacity-40" />
         <div className="container-x relative">
           <div className="reveal mb-12 text-center">
-            <p className="eyebrow mb-2">The 4-Week Program</p>
+            <p className="eyebrow mb-2">The Practice Program</p>
             <h2 className="font-display text-5xl sm:text-6xl uppercase leading-none text-offwhite">Four weeks. Four pillars.</h2>
             <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-silver">
-              A progressive development program that builds week over week — from foundational mechanics to game-speed execution and evaluation.
+              The back of The Quarterback Playbook has a short, progressive practice program that puts the guide into reps, from foundational mechanics to game-speed execution and evaluation.
             </p>
           </div>
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
@@ -201,8 +201,8 @@ export default function Home() {
             ))}
           </div>
           <div className="reveal mt-10 flex flex-wrap items-center justify-center gap-3">
-            <Link to="/program" className="btn-primary">Explore the full program</Link>
-            <Link to="/products/4-week-quarterback-development-playbook" className="btn-outline">Get the Playbook — $24</Link>
+            <Link to="/program" className="btn-primary">Explore the practice program</Link>
+            <Link to="/products/quarterback-playbook" className="btn-outline">Get the Playbook — $24</Link>
           </div>
         </div>
       </section>
@@ -269,7 +269,7 @@ export default function Home() {
                 <span className="rounded-full bg-electric px-3 py-1 text-xs font-bold uppercase tracking-wider2 text-white">Best Value</span>
               </div>
               <h2 className="font-display text-5xl sm:text-6xl uppercase leading-[0.95] text-offwhite">Train the<br />complete game.</h2>
-              <p className="mt-5 max-w-md text-base leading-relaxed text-silver">Get the Playbook, Film Room Guide, and Offseason Journal together — a structured program, a film-study system, and a 12-week journal designed to work as one. Three products. One offseason. $10 less than buying separately.</p>
+              <p className="mt-5 max-w-md text-base leading-relaxed text-silver">Get the Playbook, Film Room Guide, and Offseason Journal together — a complete guide to the position, a film-study system, and a 12-week journal designed to work as one. Three products. One offseason. $10 less than buying separately.</p>
               <div className="mt-7 flex items-baseline gap-3">
                 <span className="font-headline text-4xl font-bold text-offwhite">${bundle.price}</span>
                 <span className="text-sm text-silver line-through">$55</span>
@@ -296,7 +296,7 @@ export default function Home() {
             {[
               { icon: Download, t: 'Instant download', d: 'Secure links delivered immediately after verified payment. Print or use on any device.' },
               { icon: ShieldCheck, t: 'Ready for secure delivery', d: 'Files are delivered only after Stripe confirms your payment, through short-lived private links.' },
-              { icon: NotebookPen, t: 'Real, usable content', d: 'A 47-drill library, 28 day cards, film worksheets, and a 12-week journal. Specific work, not generic advice.' },
+              { icon: NotebookPen, t: 'Real, usable content', d: 'A 16-chapter quarterback guide, film worksheets, a coverage library, and a 12-week journal. Specific work, not generic advice.' },
             ].map((f) => (
               <div key={f.t} className="reveal card-surface p-7 transition-colors duration-300 hover:border-white/[0.14]">
                 <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-md border border-white/10 bg-nearblack text-electric">
@@ -319,7 +319,7 @@ export default function Home() {
           </div>
           <div className="grid gap-5 sm:grid-cols-3">
             {[
-              { role: 'High school quarterback', text: 'You want a real offseason plan instead of throwing until someone tells you to stop. The Playbook gives you the drills, the sets, and the throw count for every day.' },
+              { role: 'High school quarterback', text: 'You want to understand the whole position instead of just throwing until someone tells you to stop. The Playbook walks you through the craft, the preparation, and the mindset, with a short practice program at the back.' },
               { role: 'College quarterback', text: 'You already know how to throw and need to see the game faster. The Film Room Guide and the free QB Lab train pre-snap reads, coverage calls, and decisions.' },
               { role: 'QB coach', text: 'You need something to hand a quarterback who is working alone. The Journal keeps the work measured and the player accountable, week by week.' },
             ].map((t) => (
@@ -343,7 +343,7 @@ export default function Home() {
             <p className="eyebrow mb-3">Start Today</p>
             <h2 className="font-display text-5xl sm:text-7xl uppercase leading-[0.95] text-offwhite">Your next snap starts here.</h2>
             <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-silver">
-              One download. 28 days of structured work. A real offseason. Pick a resource and start today — or get the bundle and save $10.
+              One download. The whole position, start to finish. A real offseason. Pick a resource and start today — or get the bundle and save $10.
             </p>
             <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
               <Link to="/products/complete-qb-development-bundle" className="btn-solid">Get the Bundle — $45</Link>
