@@ -182,11 +182,11 @@ export const products: Product[] = [
       },
       {
         q: 'What format is it?',
-        a: 'A 46-page downloadable PDF you can print or use on any device. Each chapter ends with a notes space you can write in.',
+        a: 'A 47-page downloadable PDF you can print or use on any device. Each chapter ends with a notes space you can write in.',
       },
     ],
     format: 'Downloadable PDF',
-    pages: '46 pages',
+    pages: '47 pages',
     badge: 'Featured Program',
   },
   {
@@ -309,7 +309,7 @@ export const products: Product[] = [
       },
     ],
     format: 'Downloadable PDF',
-    pages: '46 pages',
+    pages: '47 pages',
   },
   {
     slug: 'complete-qb-development-bundle',
@@ -321,7 +321,7 @@ export const products: Product[] = [
     cover: { hue: 'from-electric via-[#0c1430] to-nearblack', label: 'BUNDLE' },
     accent: '#3B82F6',
     shortDescription:
-      'The Playbook, Film Room Guide, and Offseason Journal together — a complete 135-page development system for $45, $10 less than buying each separately ($55).',
+      'The Playbook, Film Room Guide, and Offseason Journal together — a complete 136-page development system for $45, $10 less than buying each separately ($55).',
     longDescription:
       'The Bundle gives you the complete development picture: a complete guide to playing quarterback, a film-study guide that sharpens your recognition and decision-making, and a 12-week journal that turns your offseason into measurable progress. Three products designed to work together, for $10 less than buying each separately.',
     who: 'Quarterbacks who are serious about a complete, structured offseason and want every tool at once.',
@@ -360,7 +360,7 @@ export const products: Product[] = [
       },
     ],
     format: 'Downloadable PDF (3 files)',
-    pages: '135 pages total',
+    pages: '136 pages total',
     isBundle: true,
     includes: [
       'quarterback-playbook',
