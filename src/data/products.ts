@@ -409,14 +409,14 @@ export const faqs = [
 ];
 
 export const heroImages = {
-  primary: 'https://images.pexels.com/photos/1618200/pexels-photo-1618200.jpeg',
+  primary: 'https://images.pexels.com/photos/140039/pexels-photo-140039.jpeg',
   throwing: 'https://images.pexels.com/photos/13401812/pexels-photo-13401812.jpeg',
   prepass: 'https://images.pexels.com/photos/14664731/pexels-photo-14664731.jpeg',
   training: 'https://images.pexels.com/photos/4700756/pexels-photo-4700756.jpeg',
   stadium: 'https://images.pexels.com/photos/1646735/pexels-photo-1646735.jpeg',
   night: 'https://images.pexels.com/photos/2682296/pexels-photo-2682296.jpeg',
   huddle: 'https://images.pexels.com/photos/1147453/pexels-photo-1147453.jpeg',
-  coach: 'https://images.pexels.com/photos/140039/pexels-photo-140039.jpeg',
+  coach: 'https://images.pexels.com/photos/1618081/pexels-photo-1618081.jpeg',
   field: 'https://images.pexels.com/photos/399187/pexels-photo-399187.jpeg',
   action: 'https://images.pexels.com/photos/163226/football-quarterback-running-back-action-163226.jpeg',
 };

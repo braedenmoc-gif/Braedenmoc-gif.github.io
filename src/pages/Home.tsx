@@ -233,7 +233,7 @@ export default function Home() {
             </div>
             <div className="reveal relative">
               <div className="relative aspect-[16/11] overflow-hidden rounded-xl border border-white/10">
-                <img src={imgSrc(heroImages.coach, 1100, 750)} alt="Quarterback focused and ready to throw" className="h-full w-full object-cover" />
+                <img src={imgSrc(heroImages.coach, 1100, 750)} alt="College football players celebrating a play" className="h-full w-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-nearblack/70 via-transparent to-transparent" />
                 <div className="absolute bottom-5 left-5">
                   <span className="font-headline text-xs uppercase tracking-widest2 text-offwhite/70">Pre-snap · Post-snap · Confirm</span>
