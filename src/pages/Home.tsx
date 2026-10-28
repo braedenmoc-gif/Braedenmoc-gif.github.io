@@ -332,6 +332,18 @@ export default function Home() {
         </div>
       </section>
 
+      {/* FOUNDER STORY */}
+      <section className="bg-charcoal py-16">
+        <div className="container-x">
+          <div className="reveal mx-auto max-w-3xl text-center">
+            <p className="eyebrow mb-3">Why I Built This</p>
+            <p className="font-display text-3xl sm:text-4xl uppercase leading-[1.05] text-offwhite">Shut out by my coach. Injured. Still a collegiate quarterback.</p>
+            <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-silver">QB Blueprint comes from a quarterback who had to keep going when it did not go his way.</p>
+            <Link to="/about" className="btn-outline mt-6">Read my story</Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="relative overflow-hidden bg-nearblack py-28 noise-overlay">
         <div className="absolute inset-0">

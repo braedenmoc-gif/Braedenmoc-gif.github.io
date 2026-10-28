@@ -46,6 +46,21 @@ export default function About() {
         </div>
       </section>
 
+      {/* Why I built this */}
+      <section className="bg-nearblack py-24">
+        <div className="container-x">
+          <div className="reveal mx-auto max-w-3xl">
+            <p className="eyebrow mb-2">Why I Built This</p>
+            <h2 className="font-display text-4xl sm:text-5xl uppercase leading-[0.95] text-offwhite">The year I was shut out.</h2>
+            <div className="mt-6 space-y-4 border-l-2 border-electric pl-6 text-base leading-relaxed text-silver">
+              <p>My whole childhood I dreamed of starting at quarterback for my high school. That summer I was running with the first team, ready for it. Then, at the last second, I was pushed aside with no explanation, and I was alone in it. We won one game that season, and I never got a chance.</p>
+              <p>A new quarterbacks coach gave me a fresh start. I worked as hard as I ever had, then got hurt: a concussion and a partially torn labrum in my right hip. I kept working anyway. I won the starting job for my senior year and took my team to the playoffs. I finished first-team all-league, even though I was never named a captain and could feel my head coach's doubt the whole way.</p>
+              <p>Today I am a collegiate quarterback. I do not hate that coach anymore. I am grateful for the adversity, because it taught me that I am the only person in charge of my journey. That is what I want QB Blueprint to give you: not just better mechanics, but a way to keep going when it does not go your way.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Values */}
       <section className="bg-nearblack py-24">
         <div className="container-x">
