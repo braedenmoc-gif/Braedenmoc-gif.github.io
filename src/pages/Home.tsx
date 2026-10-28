@@ -100,7 +100,7 @@ export default function Home() {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="reveal relative">
               <div className="relative aspect-[4/5] overflow-hidden rounded-xl border border-white/10">
-                <img src="/images/qb-pocket.jpg" alt="Quarterback rolling out with the football" className="h-full w-full object-cover" />
+                <img src={imgSrc(heroImages.prepass, 1000, 1250)} alt="College football game action" className="h-full w-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-nearblack/80 via-transparent to-transparent" />
                 <div className="absolute bottom-5 left-5 right-5">
                   <p className="font-headline text-xs uppercase tracking-widest2 text-offwhite/80">Philosophy</p>
@@ -233,7 +233,7 @@ export default function Home() {
             </div>
             <div className="reveal relative">
               <div className="relative aspect-[16/11] overflow-hidden rounded-xl border border-white/10">
-                <img src={imgSrc(heroImages.coach, 1100, 750)} alt="College football players celebrating a play" className="h-full w-full object-cover" />
+                <img src="/images/qb-film.jpg" alt="Quarterback rolling out with the football" className="h-full w-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-nearblack/70 via-transparent to-transparent" />
                 <div className="absolute bottom-5 left-5">
                   <span className="font-headline text-xs uppercase tracking-widest2 text-offwhite/70">Pre-snap · Post-snap · Confirm</span>
