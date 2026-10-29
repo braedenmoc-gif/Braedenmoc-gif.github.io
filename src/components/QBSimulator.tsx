@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Play, RotateCcw, ArrowRight, Eye, Clock, CheckCircle2, XCircle, Target } from 'lucide-react';
 import {
   ALL_COVERAGES, COVERAGE_INFO, describeDefender, coverageExplanation, makeScenario, mulberry32, qbPosAt, sampleAt, taskLabel,
-  type Coverage, type Diff, type Pt, type RId, type Scenario, type Shell,
+  type Coverage, type DefPlayer, type Diff, type Pt, type RId, type Scenario, type Shell,
 } from '@/lab/engine';
 
 /* ------------------------------ helpers ------------------------------ */
@@ -17,8 +17,8 @@ function saveStats(s: Stats) { try { localStorage.setItem(STORE, JSON.stringify(
 
 const DIFFS: { key: Diff; label: string; blurb: string; clock: number | null }[] = [
   { key: 'beginner', label: 'Beginner', blurb: 'Four coverages, standard looks, no disguise, no clock. Learn to count safeties and find the open man.', clock: null },
-  { key: 'intermediate', label: 'Intermediate', blurb: 'All eight coverages, some disguise and blitzes, plus call the coverage after the snap. 20-second clock.', clock: 20 },
-  { key: 'expert', label: 'Expert', blurb: 'Heavy disguise, bunch and trips, more pressure. Read it, call it, throw it. 14-second clock.', clock: 14 },
+  { key: 'intermediate', label: 'Intermediate', blurb: 'All eight coverages, some disguise and blitzes, plus call the coverage after the snap. 17-second clock.', clock: 17 },
+  { key: 'expert', label: 'Expert', blurb: 'Heavy disguise, bunch and trips, more pressure. Read it, call it, throw it. 12-second clock.', clock: 12 },
 ];
 
 const shellText: Record<Shell, string> = { zero: 'No deep safety', one: 'One deep safety', two: 'Two deep safeties' };
@@ -27,22 +27,64 @@ const SHELLS: Shell[] = ['zero', 'one', 'two'];
 type Phase = 'menu' | 'presnap' | 'running' | 'decide' | 'throw' | 'result';
 
 /* ------------------------------ sprites ------------------------------ */
-function Sprite({ p, heading, off, label, highlight }: { p: Pt; heading: number; off: boolean; label?: string; highlight?: boolean }) {
+// Top-down player. heading 0 = facing downfield (up the screen). stance only shows before the snap.
+type Stance = 'three' | 'two' | 'press' | 'gun' | 'run';
+function Sprite({ p, heading, off, label, highlight, stance = 'run' }: { p: Pt; heading: number; off: boolean; label?: string; highlight?: boolean; stance?: Stance }) {
   const jersey = off ? '#2F6FE0' : '#B4474B';
   const dark = off ? '#173F86' : '#6E2326';
   const helmet = off ? '#E8ECF3' : '#2A2C31';
+  const skin = '#C9A27E';
+  const low = stance === 'three';
   return (
     <g transform={`translate(${p.x.toFixed(2)} ${(-p.y).toFixed(2)})`}>
       {highlight && <circle r={1.7} fill="none" stroke="#60A5FA" strokeWidth={0.18} strokeDasharray="0.5 0.35" />}
       <ellipse cx={0.05} cy={0.12} rx={0.95} ry={0.62} fill="rgba(0,0,0,0.35)" />
       <g transform={`rotate(${heading.toFixed(1)})`}>
-        <rect x={-0.42} y={-0.15} width={0.32} height={0.8} rx={0.14} fill={dark} />
-        <rect x={0.1} y={-0.15} width={0.32} height={0.8} rx={0.14} fill={dark} />
-        <ellipse cx={-0.82} cy={-0.1} rx={0.2} ry={0.42} fill={dark} />
-        <ellipse cx={0.82} cy={-0.1} rx={0.2} ry={0.42} fill={dark} />
-        <rect x={-0.78} y={-0.5} width={1.56} height={0.82} rx={0.4} fill={jersey} stroke={dark} strokeWidth={0.07} />
-        <circle cx={0} cy={-0.18} r={0.43} fill={helmet} stroke={dark} strokeWidth={0.07} />
-        <rect x={-0.07} y={-0.55} width={0.14} height={0.7} rx={0.06} fill={off ? '#2F6FE0' : '#B4474B'} opacity={0.9} />
+        {/* legs: staggered in a two-point stance, wide and back in a three-point stance */}
+        {stance === 'two' || stance === 'press' ? (
+          <>
+            <rect x={-0.46} y={-0.35} width={0.32} height={0.8} rx={0.14} fill={dark} />
+            <rect x={0.14} y={0.05} width={0.32} height={0.8} rx={0.14} fill={dark} />
+          </>
+        ) : low ? (
+          <>
+            <rect x={-0.55} y={0.05} width={0.34} height={0.85} rx={0.14} fill={dark} />
+            <rect x={0.21} y={0.05} width={0.34} height={0.85} rx={0.14} fill={dark} />
+          </>
+        ) : (
+          <>
+            <rect x={-0.42} y={-0.15} width={0.32} height={0.8} rx={0.14} fill={dark} />
+            <rect x={0.1} y={-0.15} width={0.32} height={0.8} rx={0.14} fill={dark} />
+          </>
+        )}
+        {/* arms */}
+        {low ? (
+          <>
+            <line x1={0.55} y1={-0.35} x2={0.42} y2={-1.15} stroke={jersey} strokeWidth={0.3} strokeLinecap="round" />
+            <circle cx={0.42} cy={-1.2} r={0.17} fill={skin} />
+            <ellipse cx={-0.82} cy={0.05} rx={0.2} ry={0.4} fill={dark} />
+          </>
+        ) : stance === 'press' ? (
+          <>
+            <line x1={-0.6} y1={-0.35} x2={-0.42} y2={-1.0} stroke={jersey} strokeWidth={0.28} strokeLinecap="round" />
+            <line x1={0.6} y1={-0.35} x2={0.42} y2={-1.0} stroke={jersey} strokeWidth={0.28} strokeLinecap="round" />
+            <circle cx={-0.42} cy={-1.05} r={0.15} fill={skin} /><circle cx={0.42} cy={-1.05} r={0.15} fill={skin} />
+          </>
+        ) : stance === 'gun' ? (
+          <>
+            <line x1={-0.6} y1={-0.3} x2={-0.2} y2={-0.85} stroke={jersey} strokeWidth={0.26} strokeLinecap="round" />
+            <line x1={0.6} y1={-0.3} x2={0.2} y2={-0.85} stroke={jersey} strokeWidth={0.26} strokeLinecap="round" />
+          </>
+        ) : (
+          <>
+            <ellipse cx={-0.82} cy={-0.1} rx={0.2} ry={0.42} fill={dark} />
+            <ellipse cx={0.82} cy={-0.1} rx={0.2} ry={0.42} fill={dark} />
+          </>
+        )}
+        <rect x={-0.78} y={low ? -0.6 : -0.5} width={1.56} height={0.82} rx={0.4} fill={jersey} stroke={dark} strokeWidth={0.07} />
+        <circle cx={0} cy={low ? -0.45 : -0.18} r={0.43} fill={helmet} stroke={dark} strokeWidth={0.07} />
+        {/* facemask shows which way he is looking */}
+        <path d={`M -0.3 ${low ? -0.8 : -0.53} Q 0 ${low ? -0.98 : -0.71} 0.3 ${low ? -0.8 : -0.53}`} fill="none" stroke={off ? '#9CA3AF' : '#D1D5DB'} strokeWidth={0.09} />
       </g>
       {label && (
         <text y={1.9} textAnchor="middle" fontSize={1.1} fontWeight={700} fill="#F5F5F3" stroke="rgba(0,0,0,0.65)" strokeWidth={0.2} paintOrder="stroke" style={{ fontFamily: 'Oswald, sans-serif' }}>{label}</text>
@@ -67,8 +109,9 @@ function FieldBg() {
     lines.push(<line key={`y${y}`} x1={-26.7} x2={26.7} y1={-y} y2={-y} stroke="rgba(245,245,243,0.14)" strokeWidth={0.12} />);
   }
   for (let y = -9; y <= 32; y += 1) {
-    [-0.9, 0.9].forEach((hx) => {
-      lines.push(<line key={`h${y}${hx}`} x1={hx * 7.4 - 0.4} x2={hx * 7.4 + 0.4} y1={-y} y2={-y} stroke="rgba(245,245,243,0.12)" strokeWidth={0.08} />);
+    // high school hash marks: 53 feet 4 inches from each sideline
+    [-8.89, 8.89].forEach((hx) => {
+      lines.push(<line key={`h${y}${hx}`} x1={hx - 0.4} x2={hx + 0.4} y1={-y} y2={-y} stroke="rgba(245,245,243,0.16)" strokeWidth={0.08} />);
     });
     lines.push(<line key={`l${y}`} x1={-26.2} x2={-25.6} y1={-y} y2={-y} stroke="rgba(245,245,243,0.12)" strokeWidth={0.08} />);
     lines.push(<line key={`r${y}`} x1={25.6} x2={26.2} y1={-y} y2={-y} stroke="rgba(245,245,243,0.12)" strokeWidth={0.08} />);
@@ -85,10 +128,41 @@ function FieldBg() {
   );
 }
 
+// 0 = facing downfield, 180 = facing the line of scrimmage, 90 = facing the right sideline
 function headingOf(a: Pt, b: Pt, fallback: number): number {
   const dx = b.x - a.x; const dy = b.y - a.y;
   if (Math.hypot(dx, dy) < 0.02) return fallback;
-  return (Math.atan2(dx, -dy) * 180) / Math.PI;
+  return (Math.atan2(dx, dy) * 180) / Math.PI;
+}
+
+// Where a defender is looking: zone defenders keep their eyes on the QB while they drop, man defenders on
+// their receiver, deep defenders turn and run once they open their hips.
+function defFacing(sc: Scenario, d: DefPlayer, t: number, pos: Pt): number {
+  const qb = qbPosAt(sc.ballX, Math.min(t, sc.tDec));
+  const toQb = headingOf(pos, qb, 180);
+  if (d.role === 'DL' && d.task.k === 'rush') return t <= 0 ? 180 : headingOf(pos, qb, 180);
+  if (t <= 0.02) {
+    if (d.task.k === 'man' && d.pre.y < 2.8) {
+      const r = sc.offense.find((o) => o.pos === (d.task as { tgt: RId }).tgt)!;
+      return headingOf(pos, r.start, 180); // squared up on his man in press
+    }
+    // off corners in a three-deep look sit with their hips turned to the sideline
+    if ((d.id === 'CBL' || d.id === 'CBR') && d.pre.y > 6 && sc.look === 'cover3') return 180 + (pos.x > sc.ballX ? -35 : 35);
+    return toQb;
+  }
+  const p2 = sampleAt(sc.traj[d.id], Math.min(sc.tEnd, t + 0.1));
+  const v = Math.hypot(p2.x - pos.x, p2.y - pos.y) / 0.1;
+  const move = headingOf(pos, p2, toQb);
+  if (d.task.k === 'rush') return move;
+  if (d.task.k === 'man') {
+    if (v < 1.5) { const r = sc.offense.find((o) => o.pos === (d.task as { tgt: RId }).tgt)!; return headingOf(pos, sampleAt(sc.traj[r.id], t), toQb); }
+    return move;
+  }
+  if (d.task.k === 'zone') {
+    const backpedal = p2.y > pos.y && (!d.task.deep || t < 0.7);
+    if (v < 1.5 || backpedal) return toQb;
+  }
+  return move;
 }
 
 /* ------------------------------ component ------------------------------ */
@@ -148,8 +222,8 @@ export function QBSimulator() {
     if (expired) setTimedOut(true);
     const e = pick ? sc.evals[pick] : null;
     const good = !!e && e.cls === 'open';
-    const best = !!pick && sc.bestId === pick;
-    const intercepted = !!e && e.cls === 'covered' && !!e.lane;
+    const best = !!pick && good && sc.bestIds.includes(pick);
+    const intercepted = !!e && e.cls === 'covered' && (!!e.lane || e.undercut);
     const s = { ...stats, byCov: { ...stats.byCov } };
     s.reps += 1;
     s.shellN += 1; if (shellGuess === sc.lookShell) s.shellOk += 1;
@@ -173,13 +247,8 @@ export function QBSimulator() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [phase, clockLeft]);
 
-  const flight = useMemo(() => {
-    if (!sc || !target) return 0.6;
-    const e = sc.evals[target];
-    const q = qbPosAt(sc.ballX, sc.tDec);
-    const d = Math.hypot(e.pos.x - q.x, e.pos.y - q.y);
-    return Math.min(1.5, 0.28 + d / 24);
-  }, [sc, target]);
+  // same ball flight the read was graded on
+  const flight = useMemo(() => (sc && target ? sc.evals[target].flight || 0.6 : 0.6), [sc, target]);
 
   useEffect(() => {
     if (phase !== 'throw' || !sc) return;
@@ -197,18 +266,21 @@ export function QBSimulator() {
   const view = useMemo(() => {
     if (!sc) return null;
     const tt = Math.min(t, sc.tEnd);
+    const pre = phase === 'presnap' || tt < 0.12;
     const off = sc.offense.map((p) => {
       const pos = sampleAt(sc.traj[p.id], tt);
       const pos2 = sampleAt(sc.traj[p.id], Math.min(sc.tEnd, tt + 0.08));
-      return { p, pos, heading: p.kind === 'ol' || p.kind === 'qb' ? 0 : headingOf(pos, pos2, 0) };
+      const stance: Stance = !pre ? 'run' : p.kind === 'ol' ? 'three' : p.kind === 'qb' ? 'gun' : 'two';
+      return { p, pos, stance, heading: p.kind === 'ol' || p.kind === 'qb' || pre ? 0 : headingOf(pos, pos2, 0) };
     });
     const def = sc.defense.map((d) => {
       const pos = sampleAt(sc.traj[d.id], tt);
-      const pos2 = sampleAt(sc.traj[d.id], Math.min(sc.tEnd, tt + 0.08));
-      return { d, pos, heading: headingOf(pos, pos2, 180) };
+      const pressed = (d.id === 'CBL' || d.id === 'CBR' || d.id === 'NB' || d.id === 'SS') && d.pre.y < 2.8;
+      const stance: Stance = !pre ? 'run' : d.role === 'DL' ? 'three' : pressed ? 'press' : 'two';
+      return { d, pos, stance, heading: defFacing(sc, d, pre ? 0 : tt, pos) };
     });
     return { off, def };
-  }, [sc, t]);
+  }, [sc, t, phase]);
 
   const ball = useMemo<Pt | null>(() => {
     if (!sc) return null;
@@ -233,12 +305,25 @@ export function QBSimulator() {
     const best = sc.bestId ? sc.evals[sc.bestId] : null;
     if (timedOut || !target) return { tone: 'bad' as const, title: 'Sack', body: 'The clock ran out in the pocket. A decision that late is a sack or a throw-away. Pick a target faster next rep.' };
     const e = sc.evals[target];
+    const routeOf = (k: RId) => sc.offense.find((o) => o.pos === k)!.route;
+    // say exactly why the best read was better, using the same numbers shown for every target
+    const compare = (b: typeof e) => {
+      const why: string[] = [];
+      if (b.gain > e.gain + 1) why.push(`it gains about ${b.gain} yds to your ${Math.max(0, e.gain)}${b.firstDown && !e.firstDown ? ` and moves the chains on ${sc.situation.split(' · ')[0]}` : ''}`);
+      if (b.gap > e.gap + 0.5) why.push(`it has ${b.gap.toFixed(1)} yds of cushion when the ball arrives to your ${e.gap.toFixed(1)}`);
+      return why.length ? ` ${b.label} (${routeOf(b.id)}) was the better throw: ${why.join(', and ')}.` : ` ${b.label} (${routeOf(b.id)}) was the better throw.`;
+    };
     if (e.cls === 'open') {
-      const isBest = sc.bestId === target;
-      return { tone: 'good' as const, title: isBest ? 'Completion. Best read.' : 'Completion. Open, but not the best read.', body: `${e.why}${!isBest && best ? ` The best option was ${best.label}: ${best.why}` : ''}` };
+      const isBest = sc.bestIds.includes(target);
+      const others = sc.bestIds.filter((k) => k !== target).map((k) => sc.evals[k].label);
+      return {
+        tone: 'good' as const,
+        title: isBest ? 'Completion. Best read.' : 'Completion. Open, but not the best read.',
+        body: `${e.why}${isBest ? (others.length ? ` ${others.join(' and ')} ${others.length > 1 ? 'were' : 'was'} just as good.` : '') : best ? compare(best) : ''}`,
+      };
     }
-    if (e.cls === 'tight') return { tone: 'meh' as const, title: 'Incomplete. Contested.', body: `${e.why} The window was too small to throw with confidence.${best ? ` ${best.label} was the better target: ${best.why}` : ''}` };
-    return { tone: 'bad' as const, title: e.lane ? 'Interception' : 'Pass breakup', body: `${e.why}${best ? ` ${best.label} was the better target: ${best.why}` : ''}` };
+    if (e.cls === 'tight') return { tone: 'meh' as const, title: 'Incomplete. Contested.', body: `${e.why}${best ? compare(best) : ''}` };
+    return { tone: 'bad' as const, title: e.lane || e.undercut ? 'Interception' : 'Pass breakup', body: `${e.why}${best ? compare(best) : ''}` };
   }, [sc, target, timedOut]);
 
   const showResult = phase === 'result';
@@ -295,10 +380,10 @@ export function QBSimulator() {
                     return <line key={`m${d.id}`} x1={dv.pos.x} y1={-dv.pos.y} x2={rv.pos.x} y2={-rv.pos.y} stroke="rgba(240,120,120,0.85)" strokeWidth={0.14} strokeDasharray="0.3 0.25" />;
                   })}
 
-                  {view.def.map(({ d, pos, heading }) => <Sprite key={d.id} p={pos} heading={heading} off={false} />)}
-                  {view.off.map(({ p, pos, heading }) => (
+                  {view.def.map(({ d, pos, heading, stance }) => <Sprite key={d.id} p={pos} heading={heading} off={false} stance={stance} />)}
+                  {view.off.map(({ p, pos, heading, stance }) => (
                     <Sprite
-                      key={p.id} p={pos} heading={heading} off
+                      key={p.id} p={pos} heading={heading} off stance={stance}
                       label={p.kind === 'rcv' ? p.label : p.kind === 'qb' ? 'QB' : undefined}
                       highlight={phase === 'decide' && p.kind === 'rcv' && p.route !== 'block'}
                     />
@@ -466,7 +551,7 @@ export function QBSimulator() {
                     return (
                       <li key={k} className="rounded-lg bg-white/5 px-3 py-2 text-xs">
                         <div className="flex items-center justify-between gap-2">
-                          <span className="font-headline text-sm text-offwhite">{p.label} <span className="font-body text-silver">· {p.route === 'block' ? 'blocking' : p.route}</span>{sc.bestId === k && <span className="ml-1.5 rounded bg-electric/30 px-1.5 py-0.5 text-[10px] text-electricsoft">BEST</span>}{target === k && <span className="ml-1.5 rounded bg-white/15 px-1.5 py-0.5 text-[10px] text-offwhite">YOUR THROW</span>}</span>
+                          <span className="font-headline text-sm text-offwhite">{p.label} <span className="font-body text-silver">· {p.route === 'block' ? 'blocking' : p.route}</span>{sc.bestIds.includes(k) && <span className="ml-1.5 rounded bg-electric/30 px-1.5 py-0.5 text-[10px] text-electricsoft">BEST</span>}{target === k && <span className="ml-1.5 rounded bg-white/15 px-1.5 py-0.5 text-[10px] text-offwhite">YOUR THROW</span>}</span>
                           <span className={`font-headline uppercase ${tone}`}>{e.cls}</span>
                         </div>
                         <p className="mt-0.5 text-silver">{e.why}</p>
