@@ -69,7 +69,7 @@ export default function Home() {
             <div className="mt-10 grid gap-px overflow-hidden rounded-md border border-white/[0.08] bg-white/[0.08] sm:grid-cols-3">
               {[
                 { k: 'Shut out', d: 'Running with the first team, then pushed aside with no explanation.' },
-                { k: 'Hurt, kept going', d: 'A concussion and a partially torn labrum in my hip. I kept working.' },
+                { k: 'Hurt, kept going', d: 'A concussion and a torn labrum in my hip. I kept working.' },
                 { k: 'Came back', d: 'Won the starting job, led my team to the playoffs, and now play in college.' },
               ].map((c) => (
                 <div key={c.k} className="bg-nearblack p-6">
