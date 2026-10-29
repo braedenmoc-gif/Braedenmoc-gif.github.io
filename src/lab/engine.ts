@@ -570,7 +570,8 @@ function evaluate(sc: { offense: OffPlayer[]; defense: DefPlayer[]; traj: Record
     if (cd) {
       const dpc = sampleAt(traj[cd.id], tDec + ft);
       const { d: sd, u } = segDist(dpc, qb, cp);
-      undercut = sd < 1.6 && u < 0.97;
+      // truly undercut only when he is on the ball's path and clearly closer to the QB than the receiver is
+      undercut = sd < 1.4 && u < 0.88 && dist(qb, dpc) < dist(qb, cp) - 1.2;
     }
     // a deep ball hangs in the air, so a defender needs less of a head start to make a play on it
     const deepX = Math.max(0, cp.y - 15);
