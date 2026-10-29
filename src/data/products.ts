@@ -25,6 +25,7 @@ export type Product = {
   badge?: string;
   isBundle?: boolean;
   includes?: string[];
+  payhipUrl: string;
   highlight?: { eyebrow: string; title: string; body: string; bullets: string[] };
 };
 
@@ -186,6 +187,7 @@ export const products: Product[] = [
         a: 'A 47-page downloadable PDF you can print or use on any device. Each chapter ends with a notes space you can write in.',
       },
     ],
+    payhipUrl: 'https://payhip.com/b/tqyef',
     format: 'Downloadable PDF',
     pages: '47 pages',
     badge: 'Featured Program',
@@ -255,6 +257,7 @@ export const products: Product[] = [
         a: 'Yes. The Playbook develops your physical and decision-making reps on the field, and its week 3 film work lines up with this guide. They also work separately.',
       },
     ],
+    payhipUrl: 'https://payhip.com/b/cGrYT',
     format: 'Downloadable PDF',
     pages: '43 pages',
   },
@@ -326,6 +329,7 @@ export const products: Product[] = [
         a: 'A 47-page downloadable PDF you can print or fill in on a tablet with any PDF annotation app.',
       },
     ],
+    payhipUrl: 'https://payhip.com/b/WIx93',
     format: 'Downloadable PDF',
     pages: '47 pages',
   },
@@ -377,6 +381,7 @@ export const products: Product[] = [
         a: 'Yes. Individually the three products cost $62; the bundle is $52, saving you $10.',
       },
     ],
+    payhipUrl: 'https://payhip.com/b/QwLey',
     format: 'Downloadable PDF (3 files)',
     pages: '137 pages total',
     isBundle: true,

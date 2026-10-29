@@ -317,7 +317,7 @@ export default function Home() {
           <div className="grid gap-5 sm:grid-cols-3">
             {[
               { icon: Download, t: 'Instant download', d: 'Secure links delivered immediately after verified payment. Print or use on any device.' },
-              { icon: ShieldCheck, t: 'Ready for secure delivery', d: 'Files are delivered only after Stripe confirms your payment, through short-lived private links.' },
+              { icon: ShieldCheck, t: 'Ready for secure delivery', d: 'Checkout and delivery are handled by Payhip, with your download link sent right after payment.' },
               { icon: NotebookPen, t: 'Real, usable content', d: 'A 16-chapter quarterback guide, film worksheets, a coverage library, and a 12-week journal. Specific work, not generic advice.' },
             ].map((f) => (
               <div key={f.t} className="reveal card-surface p-7 transition-colors duration-300 hover:border-white/[0.14]">

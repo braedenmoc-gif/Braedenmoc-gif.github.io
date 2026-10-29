@@ -13,16 +13,16 @@ export default function Privacy() {
         <div className="container-x">
           <div className="reveal mx-auto max-w-3xl space-y-8 text-sm leading-relaxed text-silver">
             <Block title="1. Information We Collect">
-              <p>We collect information you provide when you purchase a product, contact us, or create an account — including your name, email address, and payment information. Payment is processed by Stripe; we do not store your full card details.</p>
+              <p>We collect information you provide when you purchase a product, contact us, or create an account — including your name, email address, and payment information. Payment is processed by Payhip and its payment providers (PayPal or card processing); we do not see or store your full card details.</p>
             </Block>
             <Block title="2. How We Use Your Information">
               <p>We use your information to process orders, deliver digital downloads, send purchase receipts, respond to inquiries, and improve our resources. We do not sell or rent your personal information to third parties.</p>
             </Block>
             <Block title="3. Cookies and Tracking">
-              <p>We use minimal cookies and local storage to keep your shopping cart working and your session functional. We do not use invasive tracking or sell behavioral data to advertisers.</p>
+              <p>We use minimal cookies and local storage to keep the site working. We do not use invasive tracking or sell behavioral data to advertisers.</p>
             </Block>
             <Block title="4. Data Security">
-              <p>Payment processing is handled by Stripe, a PCI-compliant provider. Your payment details never touch our servers. Download links are protected and verified server-side after payment confirmation.</p>
+              <p>Checkout, payment processing, and file delivery are handled by Payhip. Your payment details never touch our servers.</p>
             </Block>
             <Block title="5. Your Rights">
               <p>You may request access to, correction of, or deletion of your personal data at any time by contacting us at support@nextsnapqb.com.</p>

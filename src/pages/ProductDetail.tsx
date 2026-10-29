@@ -1,17 +1,13 @@
 import { useParams, Link, Navigate } from '@/router';
 import { useState } from 'react';
-import { Check, Download, FileText, Lock, ShieldCheck, ArrowLeft, Plus, Minus, ChevronDown } from 'lucide-react';
+import { Check, Download, FileText, Lock, ShieldCheck, ArrowLeft, ChevronDown } from 'lucide-react';
 import { products, getProduct, heroImages, imgSrc } from '@/data/products';
 import { ProductMockup, ProductCard } from '@/components/ProductMockup';
-import { useCart } from '@/context/CartContext';
 
 export default function ProductDetail() {
   const { slug } = useParams<{ slug: string }>();
   const product = slug ? getProduct(slug) : undefined;
-  const { add } = useCart();
-  const [qty, setQty] = useState(1);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const [added, setAdded] = useState(false);
 
   if (!product) return <Navigate to="/resources" replace />;
 
@@ -19,12 +15,6 @@ export default function ProductDetail() {
   const bundleIncludes = product.includes
     ? product.includes.map((s) => getProduct(s)).filter(Boolean)
     : [];
-
-  const handleAdd = () => {
-    add(product.id, qty);
-    setAdded(true);
-    setTimeout(() => setAdded(false), 2000);
-  };
 
   return (
     <>
@@ -70,19 +60,13 @@ export default function ProductDetail() {
                 {product.pages && <Meta icon={FileText} label="Length" value={product.pages} />}
               </div>
 
-              {/* Qty + Add */}
-              <div className="mt-6 flex flex-wrap items-center gap-3">
-                <div className="flex items-center gap-1 border border-white/10 rounded-md">
-                  <button onClick={() => setQty(Math.max(1, qty - 1))} className="flex h-11 w-11 items-center justify-center text-silver hover:text-offwhite" aria-label="Decrease quantity"><Minus className="h-4 w-4" /></button>
-                  <span className="w-10 text-center text-offwhite">{qty}</span>
-                  <button onClick={() => setQty(qty + 1)} className="flex h-11 w-11 items-center justify-center text-silver hover:text-offwhite" aria-label="Increase quantity"><Plus className="h-4 w-4" /></button>
-                </div>
-                <button onClick={handleAdd} className={`btn-primary flex-1 sm:flex-none ${added ? 'bg-electricdark' : ''}`}>
-                  {added ? 'Added to Cart' : `Add to Cart — $${product.price * qty}`}
-                </button>
+              <div className="mt-6">
+                <a href={product.payhipUrl} target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex w-full justify-center sm:w-auto">
+                  Buy Now — ${product.price}
+                </a>
               </div>
               <div className="mt-4 flex items-center gap-4 text-xs text-silver/60">
-                <span className="flex items-center gap-1.5"><Lock className="h-3 w-3" /> Secure checkout via Stripe</span>
+                <span className="flex items-center gap-1.5"><Lock className="h-3 w-3" /> Secure checkout via Payhip</span>
                 <span className="flex items-center gap-1.5"><ShieldCheck className="h-3 w-3" /> 14-day satisfaction guarantee</span>
               </div>
             </div>

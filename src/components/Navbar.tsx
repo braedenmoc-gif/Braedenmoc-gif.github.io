@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from '@/router';
-import { Menu, X, ShoppingBag, ChevronRight } from 'lucide-react';
-import { useCart } from '@/context/CartContext';
+import { Menu, X, ChevronRight } from 'lucide-react';
 
 const nav = [
   { label: 'Home', to: '/' },
@@ -15,7 +14,6 @@ const nav = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const { count, openCart } = useCart();
   const location = useLocation();
 
   useEffect(() => {
@@ -55,11 +53,6 @@ export function Navbar() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <button onClick={openCart} className="relative flex items-center gap-2 rounded-md border border-white/10 bg-charcoal px-3.5 py-2 text-offwhite transition-colors hover:border-white/25" aria-label="Open cart">
-              <ShoppingBag className="h-4 w-4" />
-              <span className="hidden sm:inline font-headline text-xs font-semibold uppercase tracking-wider2">Cart</span>
-              {count > 0 && <span className="absolute -right-1.5 -top-1.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-electric px-1 text-[10px] font-bold text-white">{count}</span>}
-            </button>
             <button onClick={() => setOpen((v) => !v)} className="flex h-9 w-9 items-center justify-center rounded-md border border-white/10 bg-charcoal text-offwhite transition-colors hover:border-white/25 lg:hidden" aria-label="Toggle menu">
               {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
             </button>
