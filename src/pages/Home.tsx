@@ -40,14 +40,14 @@ export default function Home() {
               Built for<br />the next snap.
             </h1>
             <p className="mt-7 max-w-xl text-base sm:text-lg leading-relaxed text-silver opacity-0 animate-fade-up [animation-delay:0.35s] [animation-fill-mode:forwards]">
-              Train with purpose. Study with intention. Develop the mechanics, confidence, and football IQ to elevate your quarterback game.
+              Guides for quarterbacks, written by a college quarterback who was shut out, injured, and kept going.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-3 opacity-0 animate-fade-up [animation-delay:0.5s] [animation-fill-mode:forwards]">
-              <Link to="/products/quarterback-playbook" className="btn-primary">Get the Playbook — $24</Link>
-              <Link to="/products/complete-qb-development-bundle" className="btn-outline">Get the Bundle — $52</Link>
+              <Link to="/about" className="btn-primary">Read my story</Link>
+              <Link to="/resources" className="btn-outline">Shop the guides</Link>
             </div>
             <p className="mt-4 font-headline text-xs uppercase tracking-wider2 text-silver/50 opacity-0 animate-fade-up [animation-delay:0.6s] [animation-fill-mode:forwards]">
-              Instant download · Save $10 with the bundle
+              Instant PDF downloads · Free QB Lab
             </p>
           </div>
         </div>
@@ -55,6 +55,33 @@ export default function Home() {
           <div className="container-x flex items-center justify-between py-6">
             <span className="font-headline text-[10px] uppercase tracking-widest2 text-silver/40">Scroll</span>
             <span className="font-headline text-[10px] uppercase tracking-widest2 text-silver/40">QB Blueprint</span>
+          </div>
+        </div>
+      </section>
+
+      {/* MY STORY */}
+      <section className="relative overflow-hidden border-b border-white/[0.06] bg-charcoal py-24 noise-overlay">
+        <div className="container-x relative">
+          <div className="reveal mx-auto max-w-4xl">
+            <p className="eyebrow mb-3">My Story</p>
+            <h2 className="font-display text-5xl sm:text-7xl uppercase leading-[0.95] text-offwhite">The year I was shut out.</h2>
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-silver">All I ever wanted was to start at quarterback for my high school. Then, at the last second, I was pushed aside with no explanation. I kept working. I got hurt. I kept working. Now I am a collegiate quarterback, and everything on this site comes from that road.</p>
+            <div className="mt-10 grid gap-px overflow-hidden rounded-md border border-white/[0.08] bg-white/[0.08] sm:grid-cols-3">
+              {[
+                { k: 'Shut out', d: 'Running with the first team, then pushed aside with no explanation.' },
+                { k: 'Hurt, kept going', d: 'A concussion and a partially torn labrum in my hip. I kept working.' },
+                { k: 'Came back', d: 'Won the starting job, led my team to the playoffs, and now play in college.' },
+              ].map((c) => (
+                <div key={c.k} className="bg-nearblack p-6">
+                  <p className="font-display text-2xl uppercase leading-none text-electric">{c.k}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-silver">{c.d}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-9 flex flex-wrap items-center gap-4">
+              <Link to="/about" className="btn-primary">Read the full story</Link>
+              <span className="text-sm text-silver">A short read. It is why these guides exist.</span>
+            </div>
           </div>
         </div>
       </section>
@@ -68,9 +95,6 @@ export default function Home() {
             </span>
             <span className="flex items-center gap-2 font-headline text-xs font-semibold uppercase tracking-wider2 text-electric">
               <TrendingDown className="h-4 w-4" /> Bundle saves $10
-            </span>
-            <span className="flex items-center gap-2 font-headline text-xs font-semibold uppercase tracking-wider2 text-electric">
-              <ShieldCheck className="h-4 w-4" /> Instant download
             </span>
             <span className="flex items-center gap-2 font-headline text-xs font-semibold uppercase tracking-wider2 text-electric">
               <Download className="h-4 w-4" /> PDF — print or device
@@ -350,18 +374,6 @@ export default function Home() {
                 <p className="mt-4 text-sm leading-relaxed text-silver">{t.text}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FOUNDER STORY */}
-      <section className="bg-charcoal py-16">
-        <div className="container-x">
-          <div className="reveal mx-auto max-w-3xl text-center">
-            <p className="eyebrow mb-3">Why I Built This</p>
-            <p className="font-display text-3xl sm:text-4xl uppercase leading-[1.05] text-offwhite">Shut out by my coach. Injured. Still a collegiate quarterback.</p>
-            <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-silver">QB Blueprint comes from a quarterback who had to keep going when it did not go his way.</p>
-            <Link to="/about" className="btn-outline mt-6">Read my story</Link>
           </div>
         </div>
       </section>

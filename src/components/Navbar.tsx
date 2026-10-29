@@ -7,7 +7,7 @@ const nav = [
   { label: 'The Program', to: '/program' },
   { label: 'Training Resources', to: '/resources' },
   { label: 'Free QB Lab', to: '/film-room' },
-  { label: 'About', to: '/about' },
+  { label: 'My Story', to: '/about' },
   { label: 'FAQ', to: '/faq' },
 ];
 
