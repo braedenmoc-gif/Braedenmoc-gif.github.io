@@ -13,6 +13,8 @@ const coverages = [
   { name: 'Cover 3', desc: 'Single-high, thirds deep. Corner stays deep third, two LBs and nickel fill the hook-curl flats.' },
   { name: 'Cover 4', desc: 'Two-high quarters. Reads deep half vs deep quarter — eye-control traps for QBs who stare.' },
   { name: 'Cover 6', desc: 'Quarters to one side, Cover 2 to the other. A mixed shell that disguises weak-side leverage.' },
+  { name: 'Robber', desc: 'Man underneath with one safety jumping the middle. Throw outside, not at the crossing route.' },
+  { name: 'Fire zone', desc: 'Five rushers, three deep, three under. A lineman drops into the flat the blitzer left. Hot routes win.' },
 ];
 
 const steps = [
@@ -180,7 +182,7 @@ export default function FilmRoom() {
                 {[
                   'Pre-snap defensive identification framework',
                   'Fronts and coverage shells decoded',
-                  'Cover 0, 1, 2, 3, 4, and 6 — keys and tells',
+                  'Ten coverages with keys and tells, including Robber and Fire zone',
                   'Pressure indicators and blitz recognition',
                   'Route concepts vs coverage — where the ball goes',
                   'Progression discipline and timing windows',

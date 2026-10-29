@@ -201,12 +201,13 @@ export const products: Product[] = [
     cover: { hue: 'from-[#1c2230] via-[#10131a] to-[#0c0f15]', label: 'FILM ROOM' },
     accent: '#A9ADB4',
     shortDescription:
-      'A 43-page guide to reading defenses: 20 coverage looks with diagrams, pre-snap and post-snap keys, pressure indicators, route concepts against each coverage, progression rules, and film-grading worksheets you reuse every week.',
+      'A 39-page guide to reading defenses: ten coverage pages with diagrams, pre-snap and post-snap keys, pressure indicators, route concepts against each coverage, progression rules, and film-grading worksheets you reuse every week.',
     longDescription:
-      'The Film Room Guide teaches you how to watch film as a quarterback. It covers eight coverages with diagrams, the pre-snap and post-snap keys for each, how to spot pressure, six route concepts and where the ball goes against each coverage, and a repeatable film-study routine with three printable worksheets. Twenty practice looks with answers let you test yourself, and a one-page cheat sheet goes in your bag. It is honest about the limits of pre-snap reads: not every coverage can be identified before the snap, so it teaches you to confirm after it. Use it alone or with the free QB Lab and the Playbook.',
+      'The Film Room Guide teaches you how to watch film as a quarterback. It covers ten coverage pages with diagrams (including Robber and Fire zone), a coverage-families page, and the common disguises, with the pre-snap and post-snap keys for each, how to spot pressure, six route concepts and where the ball goes against each coverage, and a repeatable film-study routine with three printable worksheets. Twenty practice looks with answers let you test yourself, and a one-page cheat sheet goes in your bag. It is honest about the limits of pre-snap reads: not every coverage can be identified before the snap, so it teaches you to confirm after it. Use it alone or with the free QB Lab and the Playbook.',
     who: 'Quarterbacks who want to improve pre-snap recognition, learn coverage concepts, and build a repeatable film-study routine.',
     benefits: [
-      'Eight coverages broken down one per page: Cover 0, 1, 2, Tampa 2, 3, 4, 6, and 2-Man',
+      'Ten coverage pages, one per coverage: Cover 0, 1, 2, Tampa 2, 3, 4, 6, 2-Man, Robber, and Fire zone',
+      'A coverage-families page and a guide to variations and disguises: press, bail, match, invert, rotate, and rob',
       'Pre-snap looks, post-snap keys, strengths, weaknesses, and concepts that beat each one',
       'A man-or-zone checklist for confirming the coverage after the snap',
       'Pressure recognition: what the box, the safeties, and the second level tell you',
@@ -221,7 +222,7 @@ export const products: Product[] = [
       { title: 'Man or Zone?', body: 'The post-snap clues that separate man from zone, and what each one means for where the ball goes.' },
       {
         title: 'The Coverage Library',
-        body: 'Eight coverages, one per page, each with a diagram, the look, your keys, strengths, weaknesses, and the concepts that attack it.',
+        body: 'Ten coverages, one per page, each with a diagram, the look, your keys, strengths, weaknesses, and the concepts that attack it.',
         bullets: [
           'Cover 0 — man with no deep safety',
           'Cover 1 — man with one deep safety',
@@ -230,6 +231,9 @@ export const products: Product[] = [
           'Cover 4 — quarters',
           'Cover 6 — quarters to one side, halves to the other',
           '2-Man — man underneath with two safeties over the top',
+          'Robber — man coverage with a safety jumping the middle',
+          'Fire zone — five rushers with three deep and three under',
+          'Plus a coverage-families page and a variations and disguises page',
         ],
       },
       { title: 'Pressure', body: 'How to see a blitz coming from alignment and rotation, and what to do with the ball when you do.' },
@@ -259,7 +263,7 @@ export const products: Product[] = [
     ],
     payhipUrl: 'https://payhip.com/b/cGrYT',
     format: 'Downloadable PDF',
-    pages: '43 pages',
+    pages: '39 pages',
   },
   {
     slug: 'quarterback-journal',
@@ -343,7 +347,7 @@ export const products: Product[] = [
     cover: { hue: 'from-electric via-[#0c1430] to-nearblack', label: 'BUNDLE' },
     accent: '#3B82F6',
     shortDescription:
-      'The Playbook, Film Room Guide, and Quarterback Journal together — a complete 137-page development system for $52, $10 less than buying each separately ($62).',
+      'The Playbook, Film Room Guide, and Quarterback Journal together — a complete 133-page development system for $52, $10 less than buying each separately ($62).',
     longDescription:
       'The Bundle gives you the complete development picture: a complete guide to playing quarterback, a film-study guide that sharpens your recognition and decision-making, and a mental-performance journal with a full anxiety section. Three products designed to work together, for $10 less than buying each separately.',
     who: 'Quarterbacks who are serious about a complete, structured offseason and want every tool at once.',
@@ -383,7 +387,7 @@ export const products: Product[] = [
     ],
     payhipUrl: 'https://payhip.com/b/QwLey',
     format: 'Downloadable PDF (3 files)',
-    pages: '137 pages total',
+    pages: '133 pages total',
     isBundle: true,
     includes: [
       'quarterback-playbook',

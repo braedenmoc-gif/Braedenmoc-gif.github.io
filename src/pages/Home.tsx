@@ -263,10 +263,10 @@ export default function Home() {
                 See the field<br />before the snap.
               </h2>
               <p className="mt-6 max-w-md text-base leading-relaxed text-silver">
-                The Film Room Guide teaches you to read defenses frame by frame — pre-snap identification, eight coverages, pressure indicators, and six route concepts against each coverage. Built for quarterbacks who want to turn film study into faster, better decisions on the field.
+                The Film Room Guide teaches you to read defenses frame by frame — pre-snap identification, ten coverage pages, pressure indicators, and six route concepts against each coverage. Built for quarterbacks who want to turn film study into faster, better decisions on the field.
               </p>
               <ul className="mt-7 space-y-2.5">
-                {['Single-high vs two-high shell recognition', 'Eight coverages with keys: Cover 0, 1, 2, Tampa 2, 3, 4, 6, and 2-Man', 'Pressure indicators and blitz tells', 'Printable worksheets and twenty practice looks with answers'].map((t) => (
+                {['Single-high vs two-high shell recognition', 'Ten coverages with keys, including Robber and Fire zone, plus coverage families and disguises', 'Pressure indicators and blitz tells', 'Printable worksheets and twenty practice looks with answers'].map((t) => (
                   <li key={t} className="flex items-center gap-2 text-sm text-silver">
                     <Check className="h-4 w-4 text-electric shrink-0" /> {t}
                   </li>
