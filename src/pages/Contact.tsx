@@ -16,7 +16,7 @@ export default function Contact() {
         <div className="container-x relative">
           <p className="eyebrow mb-3 reveal">Contact</p>
           <h1 className="reveal display-xl text-6xl sm:text-7xl lg:text-8xl text-offwhite">Get in touch.</h1>
-          <p className="reveal mt-5 max-w-xl text-base leading-relaxed text-silver">Questions about a product, a download, or a refund? Reach out and we will get back to you.</p>
+          <p className="reveal mt-5 max-w-xl text-base leading-relaxed text-silver">Questions about a product, or a download? Reach out and we will get back to you.</p>
         </div>
       </section>
 

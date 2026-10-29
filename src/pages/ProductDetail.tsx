@@ -67,7 +67,7 @@ export default function ProductDetail() {
               </div>
               <div className="mt-4 flex items-center gap-4 text-xs text-silver/60">
                 <span className="flex items-center gap-1.5"><Lock className="h-3 w-3" /> Secure checkout via Payhip</span>
-                <span className="flex items-center gap-1.5"><ShieldCheck className="h-3 w-3" /> 14-day satisfaction guarantee</span>
+                <span className="flex items-center gap-1.5"><ShieldCheck className="h-3 w-3" /> Instant digital download</span>
               </div>
             </div>
           </div>

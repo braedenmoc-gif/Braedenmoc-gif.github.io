@@ -47,7 +47,7 @@ export default function Home() {
               <Link to="/products/complete-qb-development-bundle" className="btn-outline">Get the Bundle — $52</Link>
             </div>
             <p className="mt-4 font-headline text-xs uppercase tracking-wider2 text-silver/50 opacity-0 animate-fade-up [animation-delay:0.6s] [animation-fill-mode:forwards]">
-              Instant download · 14-day guarantee · Save $10 with the bundle
+              Instant download · Save $10 with the bundle
             </p>
           </div>
         </div>
@@ -70,7 +70,7 @@ export default function Home() {
               <TrendingDown className="h-4 w-4" /> Bundle saves $10
             </span>
             <span className="flex items-center gap-2 font-headline text-xs font-semibold uppercase tracking-wider2 text-electric">
-              <ShieldCheck className="h-4 w-4" /> 14-day guarantee
+              <ShieldCheck className="h-4 w-4" /> Instant download
             </span>
             <span className="flex items-center gap-2 font-headline text-xs font-semibold uppercase tracking-wider2 text-electric">
               <Download className="h-4 w-4" /> PDF — print or device
@@ -383,7 +383,7 @@ export default function Home() {
               <Link to="/products/complete-qb-development-bundle" className="btn-solid">Get the Bundle — $52</Link>
               <Link to="/resources" className="btn-outline">Browse All Resources</Link>
             </div>
-            <p className="mt-5 font-headline text-xs uppercase tracking-wider2 text-silver/40">Instant download · 14-day satisfaction guarantee · Print as many copies as you need</p>
+            <p className="mt-5 font-headline text-xs uppercase tracking-wider2 text-silver/40">Instant download · Print as many copies as you need</p>
           </div>
         </div>
       </section>

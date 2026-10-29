@@ -415,8 +415,8 @@ export const faqs = [
     a: 'Yes, but you will save more by buying the bundle up front. The bundle is $52 vs $62 for all three products separately.',
   },
   {
-    q: 'What if I am not satisfied?',
-    a: 'If a product is not what you expected, contact us within 14 days of purchase and we will make it right.',
+    q: 'Do you offer refunds?',
+    a: 'No. All sales are final because these are instant digital downloads. Every product page lists what is inside, so please read it before you buy. If you have a problem with your download, contact us and we will help.',
   },
 ];
 

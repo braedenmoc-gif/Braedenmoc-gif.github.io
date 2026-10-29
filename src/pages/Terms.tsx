@@ -19,7 +19,7 @@ export default function Terms() {
               <p>All products are downloadable PDFs delivered after verified payment. Download links are provided after purchase. You are responsible for saving your files; we recommend downloading immediately after purchase.</p>
             </Block>
             <Block title="3. Refund Policy">
-              <p>If a product is not what you expected, contact us within 14 days of purchase and we will make it right. Because our products are digital downloads, refunds are reviewed on a case-by-case basis to prevent abuse.</p>
+              <p>All sales are final. Because our products are instant digital downloads, we do not offer refunds. Please read each product page before you buy. If you have trouble with a download, contact us and we will help.</p>
             </Block>
             <Block title="4. No Guarantee of Results">
               <p>Our resources provide structured training material. Your results depend on your effort, consistency, and individual circumstances. We make no guarantee of athletic performance, recruitment, or playing time.</p>
