@@ -34,7 +34,7 @@ export default function Terms() {
               <p>We may update these terms from time to time. Continued use of our resources after changes constitutes acceptance of the updated terms.</p>
             </Block>
             <Block title="8. Contact">
-              <p>Questions about these terms? Email support@nextsnapqb.com.</p>
+              <p>Questions about these terms? Use the Contact page.</p>
             </Block>
           </div>
         </div>

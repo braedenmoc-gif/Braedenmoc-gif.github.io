@@ -1,5 +1,4 @@
 import { Link } from '@/router';
-import { Mail, Instagram, Twitter, Youtube } from 'lucide-react';
 
 const cols = [
   {
@@ -52,13 +51,6 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-silver">Quarterback development resources for high school and college QBs. Train mechanics, footwork, film study, decision-making, and leadership.</p>
-            <div className="mt-5 flex items-center gap-2">
-              {[Instagram, Twitter, Youtube, Mail].map((Icon, i) => (
-                <a key={i} href="#" className="flex h-9 w-9 items-center justify-center rounded-md border border-white/10 bg-charcoal text-silver transition-colors hover:border-white/25 hover:text-offwhite" aria-label="Social link">
-                  <Icon className="h-4 w-4" />
-                </a>
-              ))}
-            </div>
           </div>
           {cols.map((col) => (
             <div key={col.title}>
@@ -75,7 +67,7 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col items-center justify-between gap-4 border-t border-white/[0.06] py-7 sm:flex-row">
-          <p className="text-xs text-silver/60">© {new Date().getFullYear()} QB Blueprint QB. All rights reserved.</p>
+          <p className="text-xs text-silver/60">© {new Date().getFullYear()} QB Blueprint. All rights reserved.</p>
           <p className="text-xs text-silver/60">Built for quarterbacks, by a quarterback.</p>
         </div>
       </div>

@@ -318,7 +318,7 @@ export default function Home() {
             {[
               { icon: Download, t: 'Instant download', d: 'Secure links delivered immediately after verified payment. Print or use on any device.' },
               { icon: ShieldCheck, t: 'Ready for secure delivery', d: 'Checkout and delivery are handled by Payhip, with your download link sent right after payment.' },
-              { icon: NotebookPen, t: 'Real, usable content', d: 'A 16-chapter quarterback guide, film worksheets, a coverage library, and a 12-week journal. Specific work, not generic advice.' },
+              { icon: NotebookPen, t: 'Real, usable content', d: 'A 16-chapter quarterback guide, film worksheets, a coverage library, and a mental-performance journal with an anxiety workbook. Specific work, not generic advice.' },
             ].map((f) => (
               <div key={f.t} className="reveal card-surface p-7 transition-colors duration-300 hover:border-white/[0.14]">
                 <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-md border border-white/10 bg-nearblack text-electric">
@@ -343,7 +343,7 @@ export default function Home() {
             {[
               { role: 'High school quarterback', text: 'You want to understand the whole position instead of just throwing until someone tells you to stop. The Playbook walks you through the craft, the preparation, and the mindset, with a short practice program at the back.' },
               { role: 'College quarterback', text: 'You already know how to throw and need to see the game faster. The Film Room Guide and the free QB Lab train pre-snap reads, coverage calls, and decisions.' },
-              { role: 'QB coach', text: 'You need something to hand a quarterback who is working alone. The Journal keeps the work measured and the player accountable, week by week.' },
+              { role: 'QB coach', text: 'You need something to hand a quarterback who is working alone. The Journal gives a player daily and weekly reflection pages, a 30-day challenge, and a plan for the mental side of the position.' },
             ].map((t) => (
               <div key={t.role} className="reveal card-surface p-7">
                 <p className="font-headline text-sm font-semibold uppercase tracking-tight text-electric">{t.role}</p>

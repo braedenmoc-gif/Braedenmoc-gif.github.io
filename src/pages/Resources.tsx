@@ -18,7 +18,7 @@ export default function Resources() {
           <p className="eyebrow mb-3 reveal">Training Resources</p>
           <h1 className="reveal display-xl text-6xl sm:text-7xl lg:text-8xl text-offwhite">Resources</h1>
           <p className="reveal mt-5 max-w-xl text-base leading-relaxed text-silver">
-            Downloadable quarterback development resources — structured programs, film-study systems, and training journals. Each one is a complete, usable tool designed to help you develop.
+            Downloadable quarterback development resources — a complete position guide, a film-study guide, and a mental-performance journal. Each one is a complete, usable tool designed to help you develop.
           </p>
         </div>
       </section>
@@ -49,7 +49,7 @@ export default function Resources() {
               <div>
                 <p className="eyebrow mb-2">Best Value</p>
                 <h2 className="font-display text-5xl uppercase leading-[0.95] text-offwhite">Complete QB Development Bundle</h2>
-                <p className="mt-4 text-base leading-relaxed text-silver">All three products together — a structured program, a film-study system, and a 12-week journal. Designed to work as one complete offseason system.</p>
+                <p className="mt-4 text-base leading-relaxed text-silver">All three products together — a complete guide to the position, a film-study system, and a mental-performance journal. Designed to work together.</p>
                 <div className="mt-6 flex items-baseline gap-3">
                   <span className="font-headline text-4xl font-bold text-offwhite">${bundle.price}</span>
                   <span className="text-sm text-silver line-through">$62</span>

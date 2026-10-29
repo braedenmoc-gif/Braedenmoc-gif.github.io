@@ -6,7 +6,7 @@ import {
 } from '@/lab/engine';
 
 /* ------------------------------ helpers ------------------------------ */
-const STORE = 'nextsnap-qb-lab-v2';
+const STORE = 'qbblueprint-qb-lab-v2';
 type Stats = { reps: number; shellOk: number; shellN: number; covOk: number; covN: number; blitzOk: number; blitzN: number; good: number; best: number; ints: number; streak: number; bestStreak: number; byCov: Record<string, { n: number; good: number }> };
 const emptyStats = (): Stats => ({ reps: 0, shellOk: 0, shellN: 0, covOk: 0, covN: 0, blitzOk: 0, blitzN: 0, good: 0, best: 0, ints: 0, streak: 0, bestStreak: 0, byCov: {} });
 function loadStats(): Stats {

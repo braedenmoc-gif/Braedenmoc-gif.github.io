@@ -396,7 +396,7 @@ export const products: Product[] = [
 export const faqs = [
   {
     q: 'Who are these resources for?',
-    a: 'High school and college quarterbacks who want structured, detailed development tools. The programs assume you have a football and access to a field; the film and journal work can be done anywhere.',
+    a: 'High school and college quarterbacks who want structured, detailed development tools. The Playbook's practice section assumes you have a football and access to a field; the film and journal work can be done anywhere.',
   },
   {
     q: 'Are these physical products?',
@@ -408,7 +408,7 @@ export const faqs = [
   },
   {
     q: 'Do I need a coach to use the Playbook?',
-    a: 'No. The Playbook is written for self-directed athletes. Every day has clear objectives, drills, and checkpoints. A coach can help, but is not required.',
+    a: 'No. The Playbook is written for self-directed athletes. It explains the position chapter by chapter, with notes on what each skill should look like, and ends with a 28-day practice schedule. A coach can help, but is not required.',
   },
   {
     q: 'Can I buy the bundle later?',
