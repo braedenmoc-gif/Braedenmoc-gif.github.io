@@ -17,8 +17,8 @@ function saveStats(s: Stats) { try { localStorage.setItem(STORE, JSON.stringify(
 
 const DIFFS: { key: Diff; label: string; blurb: string; clock: number | null }[] = [
   { key: 'beginner', label: 'Beginner', blurb: 'Four coverages, standard looks, no disguise, no clock. Learn to count safeties and find the open man.', clock: null },
-  { key: 'intermediate', label: 'Intermediate', blurb: 'All eight coverages, some disguise and blitzes, plus call the coverage after the snap. 12-second clock.', clock: 12 },
-  { key: 'expert', label: 'Expert', blurb: 'Heavy disguise, bunch and trips, more pressure. Read it, call it, throw it. 8-second clock.', clock: 8 },
+  { key: 'intermediate', label: 'Intermediate', blurb: 'All eight coverages, some disguise and blitzes, plus call the coverage after the snap. 20-second clock.', clock: 20 },
+  { key: 'expert', label: 'Expert', blurb: 'Heavy disguise, bunch and trips, more pressure. Read it, call it, throw it. 14-second clock.', clock: 14 },
 ];
 
 const shellText: Record<Shell, string> = { zero: 'No deep safety', one: 'One deep safety', two: 'Two deep safeties' };
